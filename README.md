@@ -8,7 +8,7 @@ This project demonstrates a raw implementation of Google OAuth 2.0 authenticatio
 - **Action:**  
   - Generates a secure random `state` value using Node's `crypto` module.
   - Stores the `state` in the session to protect against CSRF attacks.
-  - Constructs an authorization URL `https://accounts.google.com/o/oauth2/v2/auth` to Google's OAuth 2.0 endpoint with the following parameters :
+  - Constructs an authorization URL `https://accounts.google.com/o/oauth2/v2/auth` to Google's OAuth 2.0 endpoint with the following parameters:
     - Scopes (access to user's email and profile)
     - `access_type=offline` to get a refresh token
     - `response_type=code` to receive an authorization code
@@ -87,4 +87,7 @@ This raw workflow of Google OAuth 2.0 involves:
 6. Establishing a session for the authenticated user.
 7. Allowing the user to log out, which destroys the session.
 
-This implementation provides a basic, yet robust, starting point for integrating Google authentication into a Node.js application.
+---
+
+**Important Note:**  
+Before starting the project, you must create a web application in the [Google Cloud Console](https://console.cloud.google.com/) to obtain your `client_id`, `client_secret`, and set the appropriate `redirect_uri`. This step is crucial for integrating Google OAuth 2.0 into your application.
